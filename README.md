@@ -57,6 +57,11 @@ Note: Git initialization assumes you have write access to the [doc-metrix](https
 
 Enter the repository name. The default is the current working directory name. Hit `enter` to accept the default as the repository name.
 
+Naming convention:
+- 	The repo name should be descriptive of the specification.
+
+For example, a specification for `cpu` related metrics should be named `cpu`. Similarly, a specification for `memory` related metrics should be named `memory` or shortened to `mem`. Other examples might include `network`, `sensors-power`, `sensors-temperature`, `sensors-{{ classification }}`.
+
 
 #### Author
 
