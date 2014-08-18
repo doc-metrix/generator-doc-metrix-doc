@@ -60,7 +60,7 @@ Enter the repository name. The default is the current working directory name. Hi
 Naming convention:
 - 	The repo name should be descriptive of the specification.
 
-For example, a specification for `cpu` related metrics should be named `cpu`. Similarly, a specification for `memory` related metrics should be named `memory` or shortened to `mem`. Other examples might include `network`, `sensors-power`, `sensors-temperature`, `sensors-{{ classification }}`.
+For example, a specification for `cpu` related metrics should be named `cpu`. Similarly, a specification for `memory` related metrics should be named `memory` or shortened to `mem`. Other examples might include `network`, `sensors-power`, `sensors-temperature`, `sensors-{{ classification }}`, etc.
 
 
 #### Author
