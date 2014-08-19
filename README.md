@@ -53,7 +53,7 @@ You have the option to initialize the specification directory as a Git repositor
 
 ``` bash
 $ git init
-$ git remote add origin https://github.com/doc-metrix/{{ repo_name }}.git
+$ git remote add origin https://github.com/doc-metrix/<repo_name>.git
 $ git add -A
 $ git commit -m "[INIT]"
 ```
