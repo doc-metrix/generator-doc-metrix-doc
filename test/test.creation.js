@@ -29,6 +29,7 @@ describe( 'doc-metrix specification generator', function tests() {
 			})
 			.withPrompt({
 				'name': 'doc-metrix-generator-test',
+				'description': 'A specification.',
 				'author': 'Jane Doe',
 				'git': false
 			})
@@ -49,6 +50,7 @@ describe( 'doc-metrix specification generator', function tests() {
 				'README.md',
 				'TODO.md',
 				'LICENSE',
+				'bower.json',
 				'spec/index.json'
 			];
 

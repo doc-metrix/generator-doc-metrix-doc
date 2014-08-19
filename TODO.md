@@ -2,6 +2,11 @@ TODO
 ====
 
 
+### General
+
+1. 	Add badges
+
+
 ### Validation
 
 1. 	Valid email

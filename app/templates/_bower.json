@@ -1,0 +1,27 @@
+{
+  "name": "doc-metrix-<%= name %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "authors": [
+    {
+      "name": "<%= author %>",
+      "email": "<%= email %>"
+    }
+  ],
+  "main": "spec/index.json",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doc-metrix/<%= repo %>.git"
+  },
+  "keywords": [
+    "doc-metrix",
+    "specification"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "ignore": [
+    "TODO.md",
+    ".*"
+  ],
+  "license": "MIT"
+}

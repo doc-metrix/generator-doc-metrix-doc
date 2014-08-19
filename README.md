@@ -37,6 +37,16 @@ The generator will provide a series of prompts and will use your answers to tail
 The prompts are as follows...
 
 
+#### Name
+
+Enter the specification name. The default specification name is the name of the current working directory. To accept the default, type `enter`.
+
+Naming convention:
+- 	The specification name should be descriptive of the specification.
+
+For example, a specification for `cpu` related metrics should be named `cpu`. Similarly, a specification for `memory` related metrics should be named `memory` or shortened to `mem`. Other examples might include `network`, `sensors-power`, `sensors-temperature`, `sensors-{{ classification }}`, etc.
+
+
 #### Git
 
 You have the option to initialize the specification directory as a Git repository. The default option is `Y`. Typing `enter` or `y+enter` will confirm initialization and do the following:
@@ -53,19 +63,26 @@ The initialization process stops short of pushing the commit to the remote repos
 Note: Git initialization assumes you have write access to the [doc-metrix](https://github.com/doc-metrix) organization on Github. If you are not already a member and are interested in contributing, contact one of the [owners](https://github.com/kgryte).
 
 
-#### Name
+#### Repository
 
-Enter the repository name. The default is the current working directory name. Hit `enter` to accept the default as the repository name.
-
-Naming convention:
-- 	The repo name should be descriptive of the specification.
-
-For example, a specification for `cpu` related metrics should be named `cpu`. Similarly, a specification for `memory` related metrics should be named `memory` or shortened to `mem`. Other examples might include `network`, `sensors-power`, `sensors-temperature`, `sensors-{{ classification }}`, etc.
+Enter the repository name. The default is the specification name. Hit `enter` to accept the default as the repository name.
 
 
 #### Author
 
 Enter the primary author's name; i.e., in all likelihood that will be your name.
+
+
+#### Email
+
+If you have chosen to initialize the directory as a Git repository, the default will be the email associated with your Github account. This email should be a correspondence address for those individuals wanting to contact you directly with their questions and comments.
+
+If the Github email address is fine, just type `enter`.
+
+
+#### Description
+
+Enter the specification description.
 
 
 
@@ -80,6 +97,7 @@ spec/
 LICENSE
 README.md
 TODO.md
+bower.json
 ```
 
 #### Dotfiles
@@ -90,6 +108,36 @@ These are standard fare. If you notice that files are not tracking in Git , cons
 #### License
 
 The default license is the [MIT license](http://opensource.org/licenses/MIT).
+
+
+#### Bower.json
+
+The generator creates a scaffold `bower.json`. You need to manually add `keywords`. Individuals who want to use the specification in their libraries can use [Bower](http://bower.io) to manage the specification as a dependency.
+
+``` bash
+$ bower install <specification_name> --save
+```
+
+By default, the Bower package name is the specification name prefixed by `doc-metrix-`. Hence,
+
+``` bash
+doc-metrix-<specification_name>
+```
+
+In order to [register](http://bower.io/docs/creating-packages/#register) the specification with Bower, you must first tag a release.
+
+``` bash
+$ git tag -a <major.minor.patch> -m "[UPDATE] version."
+$ git push origin <major.minor.patch>
+```
+
+Use [semantic versioning](http://semver.org/) (semvar) for communicating versions.
+
+Once tagged,
+
+``` bash
+$ bower register doc-metrix-<specification_name> git://github.com/doc-metrix/<specification_name>
+```
 
 
 #### Documentation

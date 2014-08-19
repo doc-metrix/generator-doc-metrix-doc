@@ -57,16 +57,33 @@
 			var next = this.async(),
 				dirname,
 				prompts,
-				git;
+				git,
+				user,
+				email;
+
+			// Initialize defaults:
+			user = '';
+			email = '';
 
 			// Check if the user has Git:
 			git = shell.which( 'git' );
+
+			if ( git ) {
+				user = shell.exec( 'git config --get user.name', { silent: true } ).output.trim();
+				email = shell.exec( 'git config --get user.email', { silent: true } ).output.trim();
+			}
 
 			// Get the current directory name:
 			dirname = path.basename( process.cwd() );
 
 			// Specify the input prompts required in order to tailor the specification...
 			prompts = [
+				{
+					'type': 'input',
+					'name': 'name',
+					'message': 'What is the specification name?',
+					'default': dirname
+				},
 				{
 					'type': 'confirm',
 					'name': 'git',
@@ -87,21 +104,40 @@
 						return false;
 					},
 					'type': 'input',
-					'name': 'name',
+					'name': 'repoName',
 					'message': 'What is the repo name?',
-					'default': dirname
+					default: function( answers ) {
+						return answers.name;
+					}
 				},
 				{
 					'type': 'input',
 					'name': 'author',
 					'message': 'Primary author\'s name?'
+				},
+				{
+					'type': 'input',
+					'name': 'email',
+					'message': 'Primary author\'s contact e-mail?',
+					default: function( answers ) {
+						return ( answers.git ) ? email : '';
+					}
+				},
+				{
+					'type': 'input',
+					'name': 'description',
+					'message': 'Specification description:',
+					'default': 'A specification.'
 				}
 			];
 
 			// Prompt the user for responses:
 			this.prompt( prompts, function onAnswers( answers ) {
 				this.author = answers.author;
-				this.repoName = answers.name;
+				this.email = answers.email;
+				this.specName = answers.name;
+				this.repoName = answers.repoName;
+				this.description = answers.description;
 				this.git = answers.git;
 
 				next();
@@ -146,12 +182,30 @@
 		}, // end METHOD todo()
 
 		/**
+		* METHOD: bower()
+		*	Creates a bower spec.
+		*/
+		bower: function() {
+			var context = {
+					'name': this.specName,
+					'description': this.description,
+					'repo': this.repoName,
+					'author': this.author,
+					'email': this.email
+				};
+
+			this.template( '_bower.json', 'bower.json', context );
+		},
+
+		/**
 		* METHOD: readme()
 		*	Creates a boilerplate README.
 		*/
 		readme: function() {
 			var context = {
+					'name': this.specName,
 					'author': this.author,
+					'description': this.description,
 					'year': this.year
 				};
 
