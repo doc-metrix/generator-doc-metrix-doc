@@ -41,7 +41,7 @@ $ npm install -g bower
 To [install](http://bower.io/docs/api/#install) the latest specification,
 
 ``` bash
-$ bower install doc-metrix-cpu
+$ bower install doc-metrix-<%= name %>
 ```
 
 Bower will place the specification in a `bower_components/` directory within the current working directory.
@@ -49,7 +49,7 @@ Bower will place the specification in a `bower_components/` directory within the
 To [update](http://bower.io/docs/api/#update) to the latest specification,
 
 ``` bash
-$ bower update doc-metrix-cpu
+$ bower update doc-metrix-<%= name %>
 ```
 
 
