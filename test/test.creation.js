@@ -28,9 +28,11 @@ describe( 'doc-metrix specification generator', function tests() {
 				'skip-message': true
 			})
 			.withPrompt({
-				'name': 'doc-metrix-generator-test',
+				'name': 'test',
+				'repo': 'doc-metrix-generator-test',
 				'description': 'A specification.',
 				'author': 'Jane Doe',
+				'email': 'jane@doe.com',
 				'git': false
 			})
 			.on( 'ready', function onReady( generator ) {
