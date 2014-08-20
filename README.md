@@ -1,5 +1,6 @@
 Yeoman Generator
 ================
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 This module is a [Yeoman](http://yeoman.io) generator for [doc-metrix](https://github.com/doc-metrix) metric specifications.
 
@@ -172,3 +173,23 @@ $ git push origin master
 
 Copyright &copy; 2014. [Nodeprime](http://nodeprime.com).
 
+
+
+
+[npm-image]: http://img.shields.io/npm/v/generator-doc-metrix-spec.svg
+[npm-url]: https://npmjs.org/package/generator-doc-metrix-spec
+
+[travis-image]: http://img.shields.io/travis/doc-metrix/generator-doc-metrix-spec/master.svg
+[travis-url]: https://travis-ci.org/doc-metrix/generator-doc-metrix-spec
+
+[coveralls-image]: https://img.shields.io/coveralls/doc-metrix/generator-doc-metrix-spec/master.svg
+[coveralls-url]: https://coveralls.io/r/doc-metrix/generator-doc-metrix-spec?branch=master
+
+[dependencies-image]: http://img.shields.io/david/doc-metrix/generator-doc-metrix-spec.svg
+[dependencies-url]: https://david-dm.org/doc-metrix/generator-doc-metrix-spec
+
+[dev-dependencies-image]: http://img.shields.io/david/dev/doc-metrix/generator-doc-metrix-spec.svg
+[dev-dependencies-url]: https://david-dm.org/dev/doc-metrix/generator-doc-metrix-spec
+
+[github-issues-image]: http://img.shields.io/github/issues/doc-metrix/generator-doc-metrix-spec.svg
+[github-issues-url]: https://github.com/doc-metrix/generator-doc-metrix-spec/issues

@@ -4,7 +4,7 @@ TODO
 
 ### General
 
-1. 	Add badges
+1. 	
 
 
 ### Validation
