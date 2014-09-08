@@ -16,7 +16,11 @@ $ git tag -a <major.minor.patch> -m "[UPDATE] version."
 $ git push origin <major.minor.patch>
 ```
 
-Use [semantic versioning](http://semver.org/) (semvar) for communicating versions. For example, any new metrics should be communicated as `minor` updates, while any corrections should be `patches`. Any specification restructuring (changing field names, removing fields, etc) should be communicated as `major` updates.
+Use [semantic versioning](http://semver.org/) (semvar) for communicating versions.
+
+*	Any new metrics should be communicated as `minor` updates.
+*	Any corrections/value modifications should be `patches`.
+* 	Any specification restructuring (changing field names, removing fields, etc) should be communicated as a `major` update.
 
 
 ## Usage
