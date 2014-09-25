@@ -1,7 +1,7 @@
 {
-  "name": "generator-doc-metrix-spec",
-  "version": "0.1.2",
-  "description": "A Yeoman generator for doc-metrix metric specifications.",
+  "name": "generator-doc-metrix-doc",
+  "version": "0.0.0",
+  "description": "A Yeoman generator for doc-metrix metric documentation.",
   "author": {
     "name": "Athan Reines",
     "email": "athan@nodeprime.com",
@@ -21,15 +21,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/doc-metrix/generator-doc-metrix-spec.git"
+    "url": "git://github.com/doc-metrix/generator-doc-metrix-doc.git"
   },
   "keywords": [
     "yeoman-generator",
     "doc-metrix",
-    "specification"
+    "documentation"
   ],
   "bugs": {
-    "url": "https://github.com/doc-metrix/generator-doc-metrix-spec/issues"
+    "url": "https://github.com/doc-metrix/generator-doc-metrix-doc/issues"
   },
   "dependencies": {
     "chalk": "^0.5.1",

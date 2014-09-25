@@ -3,7 +3,7 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-doc-metrix-spec' ]; then cd .. && eval "mv $currentfolder generator-doc-metrix-spec" && cd generator-doc-metrix-spec; fi
+  - if [ "$currentfolder" != 'generator-doc-metrix-doc' ]; then cd .. && eval "mv $currentfolder generator-doc-metrix-doc" && cd generator-doc-metrix-doc; fi
 after_script:
   - npm run coveralls
 

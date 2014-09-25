@@ -45,13 +45,13 @@
 			this.year = (new Date() ).getFullYear();
 
 			if ( typeof flg === 'undefined' || !flg ) {
-				this.log( yosay( 'Welcome to the doc-metrix specification generator...' ) );
+				this.log( yosay( 'Welcome to the doc-metrix documentation generator...' ) );
 			}
 		},
 
 		/**
 		* METHOD: promptUser()
-		*	Prompts a user for input relevant to the specification.
+		*	Prompts a user for input relevant to the documentation.
 		*/
 		promptUser: function() {
 			var next = this.async(),
@@ -76,12 +76,12 @@
 			// Get the current directory name:
 			dirname = path.basename( process.cwd() );
 
-			// Specify the input prompts required in order to tailor the specification...
+			// Specify the input prompts required in order to tailor the documentation...
 			prompts = [
 				{
 					'type': 'input',
 					'name': 'name',
-					'message': 'What is the specification name?',
+					'message': 'What is the documentation name?',
 					'default': dirname
 				},
 				{
@@ -126,8 +126,8 @@
 				{
 					'type': 'input',
 					'name': 'description',
-					'message': 'Specification description:',
-					'default': 'A specification.'
+					'message': 'Documentation description:',
+					'default': 'Documentation.'
 				}
 			];
 
@@ -135,7 +135,7 @@
 			this.prompt( prompts, function onAnswers( answers ) {
 				this.author = answers.author;
 				this.email = answers.email;
-				this.specName = answers.name;
+				this.docName = answers.name;
 				this.repoName = answers.repoName;
 				this.description = answers.description;
 				this.git = answers.git;
@@ -146,10 +146,10 @@
 
 		/**
 		* METHOD: mkdirs()
-		*	Creates specification directories.
+		*	Creates documentation directories.
 		*/
 		mkdirs: function() {
-			this.mkdir( 'spec' );
+			this.mkdir( 'doc' );
 		}, // end METHOD mkdirs()
 
 		/**
@@ -187,7 +187,7 @@
 		*/
 		bower: function() {
 			var context = {
-					'name': this.specName,
+					'name': this.docName,
 					'description': this.description,
 					'repo': this.repoName,
 					'author': this.author,
@@ -203,7 +203,7 @@
 		*/
 		readme: function() {
 			var context = {
-					'name': this.specName,
+					'name': this.docName,
 					'author': this.author,
 					'description': this.description,
 					'year': this.year
@@ -213,12 +213,12 @@
 		}, // end METHOD readme()
 
 		/**
-		* METHOD: spec()
-		*	Copies over specification boilerplate.
+		* METHOD: doc()
+		*	Copies over documentation boilerplate.
 		*/
-		spec: function() {
-			this.copy( 'spec/_index.json', 'spec/index.json' );
-		}, // end METHOD spec()
+		doc: function() {
+			this.copy( 'doc/_index.json', 'doc/index.json' );
+		}, // end METHOD doc()
 
 		/**
 		* METHOD: git()

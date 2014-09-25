@@ -12,7 +12,7 @@ var expect = chai.expect,
 
 
 // TESTS //
-describe('doc-metrix specification generator', function tests() {
+describe('doc-metrix documentation generator', function tests() {
 	'use strict';
 
 	it( 'can be imported' , function test() {

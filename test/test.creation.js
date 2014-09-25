@@ -13,7 +13,7 @@ var helpers = yeoman.test;
 
 // TESTS //
 
-describe( 'doc-metrix specification generator', function tests() {
+describe( 'doc-metrix documentation generator', function tests() {
 	'use strict';
 
 	// SETUP //
@@ -30,7 +30,7 @@ describe( 'doc-metrix specification generator', function tests() {
 			.withPrompt({
 				'name': 'test',
 				'repo': 'doc-metrix-generator-test',
-				'description': 'A specification.',
+				'description': 'Documentation.',
 				'author': 'Jane Doe',
 				'email': 'jane@doe.com',
 				'git': false
@@ -53,7 +53,7 @@ describe( 'doc-metrix specification generator', function tests() {
 				'TODO.md',
 				'LICENSE',
 				'bower.json',
-				'spec/index.json'
+				'doc/index.json'
 			];
 
 		helpers.assertFile( expected );
